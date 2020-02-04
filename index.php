@@ -1,20 +1,26 @@
+<style>
+
+</style>
 <?php
 require_once 'cine.php';
 require_once 'pelicula.php';
-//require_once 'espectador.php';
-
+require_once 'espectador.php';
+echo "<h2>Datos de la Película en la Sala</h2>";
 $peli = new Pelicula("Regreso al futuro", 136 ,7, "Steven Spielberg");
 echo $peli->info();
-$augusta = new Cine($peli, 3, 3, 7);
-printButacas($augusta);
+$augusta = new Cine($peli, 8, 8, 7);
 //var_dump($augusta);
+$espectador = new Espectador("Xavi", 40, 100);
+$augusta->sentar(6, 'D', $espectador);
 
-//$arrayButacas = $augusta->getButacas();
+echo "<hr>";
+$augusta->printButacas();//se ha pasado como metodo a cine y así se puede llamar desde cine
 
-function printButacas($augusta){
+/*function printSala($augusta){
     $arrayButacas = $augusta->getButacas();
-    echo "<table >";
-        for($i = 0; $i < $augusta->getFilas(); $i++){
+    //$contadorFila = $this->_filas;
+    echo "<table>";
+        for($i = $augusta->getFilas(); $i >= 0 ; $i--){
             echo "<tr>";
             for($j = 0; $j < $augusta->getColumnas(); $j++){
                 $butaca = $arrayButacas[$i][$j];
@@ -23,6 +29,9 @@ function printButacas($augusta){
             echo "</tr>";
         }
     echo "</table>";
-}
+}*/
+echo "<br>";
+echo "+++++PANTALLA+++++";
+echo "<hr>";
 
-?>
+?>    
