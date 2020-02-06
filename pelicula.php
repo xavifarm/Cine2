@@ -15,6 +15,7 @@
         /** @var integer $_director El nombre del Director de la película*/
         private $_director;
 
+        //se crea la funcion constructor para incluir todas las propiedades y generar una película en este caso
         public function __construct($titulo, $duracion, $edadMinima, $director){
             $this->_titulo = $titulo;
             $this->_duracion = $duracion;
@@ -58,7 +59,7 @@
             //imprimir información de la película
             $info = "<hr>La película es {$this->_titulo}<br>".
                  "que tiene una duración de {$this->_duracion} minutos<br>".
-                 "y es para mayores de {$this->_edadMinima}<br>".
+                 "y es para mayores de {$this->_edadMinima} años<br>".
                  "del director {$this->_director}";
                  return $info;
         }

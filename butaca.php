@@ -37,7 +37,7 @@
         }
 
         public function getLetra(){
-            return $this->_letra;
+            return chr($this->_letra);
         }
 
         public function setEspectador(Espectador $espectador){//se pone Espectador en el parentesis obligando a la funcion a que deba tener un objeto
@@ -48,6 +48,10 @@
             return $this->_espectador;
         }
 
+        /**
+         * indica si el asiento está ocupado
+         * @Boolean 
+         */
         public function ocupado(){
             return !is_null($this->_espectador);
         }
